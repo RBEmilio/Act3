@@ -1,0 +1,60 @@
+﻿<Window x:Class="Act3.Formulario_Citas"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Act3"
+        mc:Ignorable="d"
+        Title="Formulario" Height="547" Width="437"
+        Validation.Error="Validation_Error">
+    
+    <Grid Background="Black" Margin="0,0,-5,-75">
+        <StackPanel Margin="31,39,265,116" RenderTransformOrigin="0.5,0.5">
+            <StackPanel.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform AngleX="-0.141"/>
+                    <RotateTransform/>
+                    <TranslateTransform X="-0.433"/>
+                </TransformGroup>
+            </StackPanel.RenderTransform>
+            <Label HorizontalAlignment="Left" Height="23" Margin="10,10,10,10" VerticalAlignment="Top" Width="120" Background="AliceBlue">
+                Nombre:
+            </Label>
+            <Label HorizontalAlignment="Left" Height="23" Margin="10,10,10,10" VerticalAlignment="Top" Width="120"  Background="AliceBlue">
+                Apellido:
+            </Label>
+            <Label  HorizontalAlignment="Left" Height="23" Margin="10,10,10,10" VerticalAlignment="Top" Width="120" Background="AliceBlue">
+                Grupo:
+            </Label>
+            <Label  HorizontalAlignment="Left" Height="23" Margin="10,10,10,10" VerticalAlignment="Top" Width="120" Background="AliceBlue">
+                Fecha:
+            </Label>
+            <Label HorizontalAlignment="Left" Height="23" Margin="10,10,10,10" VerticalAlignment="Top" Width="120" Background="AliceBlue">
+                Ciudad:
+            </Label>
+            <Label  HorizontalAlignment="Left" Height="23" Margin="10,10,10,10" VerticalAlignment="Top" Width="120" Background="AliceBlue">
+                Sala
+            </Label>
+        </StackPanel>
+        <StackPanel Margin="262,43,12,106">
+            <TextBox Background="Aquamarine" x:Name="mi_nombre" HorizontalAlignment="Left" Height="23" Margin="10,10,10,10" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Text="{Binding Path=Nombre, NotifyOnValidationError=True, ValidatesOnDataErrors=True}"/>
+            <TextBox Background="Beige" HorizontalAlignment="Left" Height="23" Margin="10,10,10,10" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" x:Name="mi_apellidos" Text="{Binding Path=Apellidos, NotifyOnValidationError=True, ValidatesOnDataErrors=True}"/>
+            <ComboBox x:Name="mi_grupo" HorizontalAlignment="Left" Margin="10,10,10,10" VerticalAlignment="Top" Width="120" Text="{Binding Path=Grupo}" >
+                <ComboBoxItem Content="Si"/>
+                <ComboBoxItem Content="No"/>
+            </ComboBox>
+            <DatePicker x:Name="mi_fecha" HorizontalAlignment="Left" Height="23" Margin="10,10,10,10" VerticalAlignment="Top" Width="120" SelectedDate="{Binding Path=Fecha}"/>
+            <TextBox Background="Aquamarine" x:Name="mi_ciudad" HorizontalAlignment="Left" Height="23" Margin="10,10,10,10" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Text="{Binding Path=Ciudad, NotifyOnValidationError=True, ValidatesOnDataErrors=True}"/>
+            <ComboBox x:Name="mi_sala" HorizontalAlignment="Left" Margin="10,10,10,10" VerticalAlignment="Top" Width="120" Text="{Binding Path=Sala}">
+                <ComboBoxItem Content="Sala 1"/>
+                <ComboBoxItem Content="Sala 2"/>
+                <ComboBoxItem Content="Sala 3"/>
+            </ComboBox>
+        </StackPanel>
+        <DockPanel Margin="165,349,117,113">
+            <Button x:Name="Aceptar" Margin="10,10,10,10" Click="Agregar" Content="Aceptar" Validation.Error="Validation_Error"/>
+            <Button x:Name="cancelar" Margin="10,10,10,10" Click="Cancelar" Content="Cancelar"/>
+        </DockPanel>
+    </Grid>
+</Window>
